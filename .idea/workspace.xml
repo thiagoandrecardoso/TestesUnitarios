@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a26d7e08-b076-4140-9758-f9138b3de394" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/ce/wcaquino/utils/DataUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ce/wcaquino/utils/DataUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/AssertTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +53,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn install" />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunManager" selected="JUnit.LocacaoServiceTest">
@@ -154,7 +162,7 @@
       <workItem from="1577372254919" duration="4862000" />
       <workItem from="1577379036234" duration="9000" />
       <workItem from="1577384364495" duration="3883000" />
-      <workItem from="1577398537156" duration="116000" />
+      <workItem from="1577398537156" duration="232000" />
     </task>
     <servers />
   </component>
@@ -162,10 +170,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1680" y="37" key="#Project_Structure" timestamp="1577398654418">
+    <state x="1680" y="37" key="#Project_Structure" timestamp="1577398771174">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
-    <state x="1680" y="37" key="#Project_Structure/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398654418" />
+    <state x="1680" y="37" key="#Project_Structure/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398771174" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1576871818436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
