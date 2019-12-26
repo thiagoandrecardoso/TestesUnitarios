@@ -26,7 +26,7 @@ public class LocacaoServiceTest {
     public ExpectedException exception = ExpectedException.none();
     private LocacaoService service;
 
-    private int contador = 0;
+//    private int contador = 0;
 
     /**
      * Before roda antes de cada teste
@@ -35,15 +35,14 @@ public class LocacaoServiceTest {
      */
     @Before
     public void setUp() {
-        System.out.println("Before");
         service = new LocacaoService();
-        contador++;
-        System.out.println("Contador " + contador);
+//        contador++;
+//        System.out.println("Contador " + contador);
     }
 
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Roda antes da classe ser instanciada");
+//        System.out.println("Roda antes da classe ser instanciada");
     }
 
     @AfterClass
