@@ -9,6 +9,7 @@ import br.ce.wcaquino.exception.LocadoraException;
 import org.junit.*;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.junit.runners.MethodSorters;
 
 import java.util.Date;
 
@@ -18,6 +19,11 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
+/**
+ * Assinatura FixMethodOrder abaixo garante que os métodos sejam
+ * testados em ordem alfabética.
+ */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LocacaoServiceTest {
 
     @Rule
@@ -25,8 +31,6 @@ public class LocacaoServiceTest {
     @Rule
     public ExpectedException exception = ExpectedException.none();
     private LocacaoService service;
-
-//    private int contador = 0;
 
     /**
      * Before roda antes de cada teste
@@ -36,13 +40,10 @@ public class LocacaoServiceTest {
     @Before
     public void setUp() {
         service = new LocacaoService();
-//        contador++;
-//        System.out.println("Contador " + contador);
     }
 
     @BeforeClass
     public static void setUpClass() {
-//        System.out.println("Roda antes da classe ser instanciada");
     }
 
     @AfterClass
@@ -50,7 +51,7 @@ public class LocacaoServiceTest {
     }
 
     @Test
-    public void testeLocacao() throws Exception {
+    public void a_testeLocacao() throws Exception {
         //cenario
         Usuario usuario = new Usuario("Usuario 1");
         Filme filme = new Filme("Filme 1", 2, 5.0);
@@ -65,7 +66,7 @@ public class LocacaoServiceTest {
     }
 
     @Test(expected = FilmeSemEstoqueException.class)
-    public void testeFilmeSemEstoqueComTestEsperandoExcessao() throws Exception {
+    public void b_testeFilmeSemEstoqueComTestEsperandoExcessao() throws Exception {
         //cenario
         Usuario usuario = new Usuario("Usuario 1");
         Filme filme = new Filme("Filme 1", 0, 5.0);
@@ -75,7 +76,7 @@ public class LocacaoServiceTest {
     }
 
     @Test
-    public void testeUsuarioVazio() throws FilmeSemEstoqueException {
+    public void c_testeUsuarioVazio() throws FilmeSemEstoqueException {
         Filme filme = new Filme("Lisbela", 2, 5.0);
         try {
             service.alugarFilme(null, filme);
@@ -86,7 +87,7 @@ public class LocacaoServiceTest {
     }
 
     @Test
-    public void testeFilmeVazio() throws FilmeSemEstoqueException, LocadoraException {
+    public void d_testeFilmeVazio() throws FilmeSemEstoqueException, LocadoraException {
         Usuario usuario = new Usuario("Usuario 1");
 
         exception.expect(LocadoraException.class);
