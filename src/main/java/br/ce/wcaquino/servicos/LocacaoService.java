@@ -17,11 +17,11 @@ public class LocacaoService {
         if (usuario == null) {
             throw new LocadoraException("Usuário vazio");
         }
-        if (listaFilme.isEmpty()) {
+        if (listaFilme == null) {
             throw new LocadoraException("Filme vazio");
         }
         for (Filme lista : listaFilme) {
-            if (lista.getEstoque() == null) {
+            if (lista.getEstoque() == 0) {
                 throw new FilmeSemEstoqueException();
             }
         }

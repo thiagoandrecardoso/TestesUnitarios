@@ -1,6 +1,5 @@
 package br.ce.wcaquino.servicos;
 
-
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
@@ -10,7 +9,9 @@ import org.junit.*;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import static br.ce.wcaquino.utils.DataUtils.isMesmaData;
 import static br.ce.wcaquino.utils.DataUtils.obterDataComDiferencaDias;
@@ -26,8 +27,6 @@ public class LocacaoServiceTest {
     public ExpectedException exception = ExpectedException.none();
     private LocacaoService service;
 
-//    private int contador = 0;
-
     /**
      * Before roda antes de cada teste
      * O método sempre inicializa o que for repassado no ponto de início
@@ -36,29 +35,21 @@ public class LocacaoServiceTest {
     @Before
     public void setUp() {
         service = new LocacaoService();
-//        contador++;
-//        System.out.println("Contador " + contador);
-    }
-
-    @BeforeClass
-    public static void setUpClass() {
-//        System.out.println("Roda antes da classe ser instanciada");
-    }
-
-    @AfterClass
-    public static void afterClass() {
     }
 
     @Test
     public void testeLocacao() throws Exception {
         //cenario
         Usuario usuario = new Usuario("Usuario 1");
-        Filme filme = new Filme("Filme 1", 2, 5.0);
+        Filme filme1 = new Filme("Filme 1", 2, 5.0);
+        Filme filme2 = new Filme("Filme 2", 2, 5.0);
+        Filme filme3 = new Filme("Filme 3", 2, 5.0);
+        List<Filme> listaFilmes = Arrays.asList(filme1, filme2, filme3);
         //acao
         Locacao locacao = null;
-        locacao = service.alugarFilme(usuario, filme);
+        locacao = service.alugarFilme(usuario, listaFilmes);
         //verificacao
-        error.checkThat(locacao.getValor(), is(equalTo(5.0)));
+        error.checkThat(locacao.getValor(), is(equalTo(15.0)));
         error.checkThat(locacao.getValor(), is(not(6.0)));
         error.checkThat(isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
         error.checkThat(isMesmaData(locacao.getDataRetorno(), obterDataComDiferencaDias(1)), is(true));
@@ -68,17 +59,22 @@ public class LocacaoServiceTest {
     public void testeFilmeSemEstoqueComTestEsperandoExcessao() throws Exception {
         //cenario
         Usuario usuario = new Usuario("Usuario 1");
-        Filme filme = new Filme("Filme 1", 0, 5.0);
+        Filme filme1 = new Filme("Filme 1", 0, 5.0);
+        Filme filme2 = new Filme("Filme 2", 0, 5.0);
+        Filme filme3 = new Filme("Filme 3", 0, 5.0);
+        List<Filme> listaFilmes = Arrays.asList(filme1, filme2, filme3);
         //acao
-//        Locacao locacao = null;
-        service.alugarFilme(usuario, filme);
+        service.alugarFilme(usuario, listaFilmes);
     }
 
     @Test
     public void testeUsuarioVazio() throws FilmeSemEstoqueException {
-        Filme filme = new Filme("Lisbela", 2, 5.0);
+        Filme filme1 = new Filme("Filme 1", 2, 5.0);
+        Filme filme2 = new Filme("Filme 2", 2, 5.0);
+        Filme filme3 = new Filme("Filme 3", 2, 5.0);
+        List<Filme> listaFilmes = Arrays.asList(filme1, filme2, filme3);
         try {
-            service.alugarFilme(null, filme);
+            service.alugarFilme(null, listaFilmes);
             fail();
         } catch (LocadoraException e) {
             assertThat(e.getMessage(), is("Usuário vazio"));
