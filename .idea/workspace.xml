@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a26d7e08-b076-4140-9758-f9138b3de394" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/entidades/Locacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/entidades/Locacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestesUnitarios" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,6 +48,11 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+    </option>
   </component>
   <component name="RunManager" selected="JUnit.LocacaoServiceTest">
     <configuration name="All in TestesUnitarios (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -151,6 +154,7 @@
       <workItem from="1577372254919" duration="4862000" />
       <workItem from="1577379036234" duration="9000" />
       <workItem from="1577384364495" duration="3883000" />
+      <workItem from="1577398537156" duration="116000" />
     </task>
     <servers />
   </component>
@@ -158,6 +162,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1680" y="37" key="#Project_Structure" timestamp="1577398654418">
+      <screen x="1440" y="-157" width="2560" height="1057" />
+    </state>
+    <state x="1680" y="37" key="#Project_Structure/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398654418" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1576871818436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -170,22 +178,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577378554490" />
-    <state width="1877" height="237" key="GridCell.Tab.0.bottom" timestamp="1577388274948">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1238" height="290" key="GridCell.Tab.0.bottom" timestamp="1577398683305">
+      <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="237" key="GridCell.Tab.0.bottom/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577388274948" />
-    <state width="1877" height="237" key="GridCell.Tab.0.center" timestamp="1577388274948">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1238" height="290" key="GridCell.Tab.0.bottom/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398683305" />
+    <state width="1238" height="290" key="GridCell.Tab.0.center" timestamp="1577398683304">
+      <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="237" key="GridCell.Tab.0.center/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577388274948" />
-    <state width="1877" height="237" key="GridCell.Tab.0.left" timestamp="1577388274948">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1238" height="290" key="GridCell.Tab.0.center/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398683304" />
+    <state width="1238" height="290" key="GridCell.Tab.0.left" timestamp="1577398683303">
+      <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="237" key="GridCell.Tab.0.left/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577388274948" />
-    <state width="1877" height="237" key="GridCell.Tab.0.right" timestamp="1577388274948">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1238" height="290" key="GridCell.Tab.0.left/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398683303" />
+    <state width="1238" height="290" key="GridCell.Tab.0.right" timestamp="1577398683305">
+      <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="237" key="GridCell.Tab.0.right/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577388274948" />
+    <state width="1238" height="290" key="GridCell.Tab.0.right/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398683305" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1577387164654">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -194,14 +206,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577384364730" />
+    <state x="1885" y="295" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577398706234">
+      <screen x="1440" y="-157" width="2560" height="1057" />
+    </state>
+    <state x="1885" y="295" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398706234" />
     <state x="342" y="221" key="new project wizard" timestamp="1577378642829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="221" key="new project wizard/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577378642829" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1577387084072">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2261" y="87" width="672" height="677" key="run.anything.popup" timestamp="1577398669696">
+      <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state x="616" y="240" key="run.anything.popup/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577387084072" />
+    <state x="2261" y="87" width="672" height="677" key="run.anything.popup/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398669696" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TestesUnitarios$All_in_TestesUnitarios.ic" NAME="All in TestesUnitarios Coverage Results" MODIFIED="1576875729759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
