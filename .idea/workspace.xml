@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a26d7e08-b076-4140-9758-f9138b3de394" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/exception/FilmeSemEstoqueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/exception/FilmeSemEstoqueException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" afterDir="false" />
     </list>
@@ -169,37 +170,37 @@
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state x="1680" y="37" key="#Project_Structure/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577398771174" />
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1576871818436">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1577466488105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1576871818436" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1577385093417">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577466488105" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1577466270761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577385093417" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577466270761" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1577378554490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577378554490" />
-    <state width="1238" height="274" key="GridCell.Tab.0.bottom" timestamp="1577417241846">
-      <screen x="1440" y="-157" width="2560" height="1057" />
+    <state width="1877" height="203" key="GridCell.Tab.0.bottom" timestamp="1577481206066">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.bottom/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577388274948" />
+    <state width="1877" height="203" key="GridCell.Tab.0.bottom/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
     <state width="1238" height="274" key="GridCell.Tab.0.bottom/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577417241846" />
-    <state width="1238" height="274" key="GridCell.Tab.0.center" timestamp="1577417241845">
-      <screen x="1440" y="-157" width="2560" height="1057" />
+    <state width="1877" height="203" key="GridCell.Tab.0.center" timestamp="1577481206066">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.center/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577388274948" />
+    <state width="1877" height="203" key="GridCell.Tab.0.center/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
     <state width="1238" height="274" key="GridCell.Tab.0.center/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577417241845" />
-    <state width="1238" height="274" key="GridCell.Tab.0.left" timestamp="1577417241845">
-      <screen x="1440" y="-157" width="2560" height="1057" />
+    <state width="1877" height="203" key="GridCell.Tab.0.left" timestamp="1577481206066">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.left/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577388274948" />
+    <state width="1877" height="203" key="GridCell.Tab.0.left/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
     <state width="1238" height="274" key="GridCell.Tab.0.left/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577417241845" />
-    <state width="1238" height="274" key="GridCell.Tab.0.right" timestamp="1577417241846">
-      <screen x="1440" y="-157" width="2560" height="1057" />
+    <state width="1877" height="203" key="GridCell.Tab.0.right" timestamp="1577481206066">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="237" key="GridCell.Tab.0.right/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577388274948" />
+    <state width="1877" height="203" key="GridCell.Tab.0.right/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
     <state width="1238" height="274" key="GridCell.Tab.0.right/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577417241846" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1577387164654">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -59,9 +59,9 @@ public class LocacaoServiceTest {
     public void deveLancarExcecaoAoLocarFilmeSemEstoque() throws Exception {
         //cenario
         Usuario usuario = new Usuario("Usuario 1");
-        Filme filme1 = new Filme("Filme 1", 0, 5.0);
+        Filme filme1 = new Filme("Filme 1", 1, 5.0);
         Filme filme2 = new Filme("Filme 2", 0, 5.0);
-        Filme filme3 = new Filme("Filme 3", 0, 5.0);
+        Filme filme3 = new Filme("Filme 3", 4, 5.0);
         List<Filme> listaFilmes = Arrays.asList(filme1, filme2, filme3);
         //acao
         service.alugarFilme(usuario, listaFilmes);

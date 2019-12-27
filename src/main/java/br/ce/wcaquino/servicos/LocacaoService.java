@@ -22,7 +22,7 @@ public class LocacaoService {
         }
         for (Filme lista : listaFilme) {
             if (lista.getEstoque() == 0) {
-                throw new FilmeSemEstoqueException();
+                throw new FilmeSemEstoqueException(lista.getNome());
             }
         }
 
