@@ -33,8 +33,14 @@ public class LocacaoService {
 
         // adicionar preço da locação
         double valorLocacaoAux = 0;
-        for (Filme lista : listaFilme) {
-            valorLocacaoAux += lista.getPrecoLocacao();
+
+        for (int i = 0; i < listaFilme.size(); i++) {
+            Filme filme = listaFilme.get(i);
+            Double valorFilme = filme.getPrecoLocacao();
+            if (i == 2) {
+                valorFilme *= 0.75;
+            }
+            valorLocacaoAux += valorFilme;
         }
         locacao.setValor(valorLocacaoAux);
 
