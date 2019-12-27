@@ -4,7 +4,6 @@
     <list default="true" id="a26d7e08-b076-4140-9758-f9138b3de394" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +156,7 @@
       <workItem from="1577372254919" duration="4862000" />
       <workItem from="1577379036234" duration="9000" />
       <workItem from="1577384364495" duration="3883000" />
-      <workItem from="1577398537156" duration="1293000" />
+      <workItem from="1577398537156" duration="2493000" />
     </task>
     <servers />
   </component>

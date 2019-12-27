@@ -17,7 +17,7 @@ public class LocacaoService {
         if (usuario == null) {
             throw new LocadoraException("Usuário vazio");
         }
-        if (listaFilme == null) {
+        if (listaFilme == null || listaFilme.isEmpty()) {
             throw new LocadoraException("Filme vazio");
         }
         for (Filme lista : listaFilme) {
