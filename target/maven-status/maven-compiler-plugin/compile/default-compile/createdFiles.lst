@@ -1,0 +1,7 @@
+br/ce/wcaquino/entidades/Filme.class
+br/ce/wcaquino/entidades/Usuario.class
+br/ce/wcaquino/entidades/Locacao.class
+br/ce/wcaquino/exception/FilmeSemEstoqueException.class
+br/ce/wcaquino/utils/DataUtils.class
+br/ce/wcaquino/exception/LocadoraException.class
+br/ce/wcaquino/servicos/LocacaoService.class
