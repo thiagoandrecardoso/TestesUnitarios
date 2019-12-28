@@ -37,8 +37,19 @@ public class LocacaoService {
         for (int i = 0; i < listaFilme.size(); i++) {
             Filme filme = listaFilme.get(i);
             Double valorFilme = filme.getPrecoLocacao();
-            if (i == 2) {
-                valorFilme *= 0.75;
+            switch (i) {
+                case 2:
+                    valorFilme *= 0.75;
+                    break;
+                case 3:
+                    valorFilme *= 0.5;
+                    break;
+                case 4:
+                    valorFilme *= 0.25;
+                    break;
+                case 5:
+                    valorFilme *= 0.0;
+                    break;
             }
             valorLocacaoAux += valorFilme;
         }
