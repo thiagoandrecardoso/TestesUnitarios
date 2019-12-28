@@ -9,6 +9,7 @@ import br.ce.wcaquino.utils.DataUtils;
 import org.junit.*;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import sun.plugin2.main.client.CALayerProvider;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -42,6 +43,7 @@ public class LocacaoServiceTest {
     @Test
     public void verificaValoresDelocacaoData_precos() throws Exception {
         //cenario
+        Assume.assumeFalse(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
         Usuario usuario = new Usuario("Usuario 1");
         Filme filme1 = new Filme("Filme 1", 2, 5.0);
         Filme filme2 = new Filme("Filme 2", 2, 5.0);
@@ -147,20 +149,16 @@ public class LocacaoServiceTest {
 
     @Test
     public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException {
+
+        Assume.assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
+
         Usuario usuario = new Usuario("Thiago");
         List<Filme> filmes = Arrays.asList(new Filme("Armageddon", 2, 4.0));
 
         Locacao retorno = service.alugarFilme(usuario, filmes);
 
-        /**
-         * Verificar se o dia do aluguel é sábado
-         */
-        boolean ehSabado = DataUtils.verificarDiaSemana(retorno.getDataLocacao(), Calendar.SATURDAY);
-        if (ehSabado) {
-            boolean ehSegunda = DataUtils.verificarDiaSemana(retorno.getDataRetorno(), Calendar.MONDAY);
-            Assert.assertTrue(ehSegunda);
-        }else{
-            Assert.assertTrue(true);
-        }
+        boolean ehSegunda = DataUtils.verificarDiaSemana(retorno.getDataRetorno(), Calendar.MONDAY);
+        Assert.assertTrue(ehSegunda);
+
     }
 }
