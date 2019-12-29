@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a26d7e08-b076-4140-9758-f9138b3de394" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/CalcularValorLocacaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" afterDir="false" />
     </list>
@@ -57,7 +58,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LocacaoServiceTest">
+  <component name="RunManager" selected="JUnit.CalcularValorLocacaoTest">
     <configuration name="All in TestesUnitarios (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <option name="PACKAGE_NAME" value="" />
@@ -66,10 +67,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in TestesUnitarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalcularValorLocacaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ce.wcaquino.servicos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.ce.wcaquino.servicos" />
+      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.CalcularValorLocacaoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CalcularValorLocacaoTest" />
         <item itemvalue="JUnit.LocacaoServiceTest" />
         <item itemvalue="JUnit.LocacaoServiceTest.deveDevolverNaSegundaAoAlugarNoSabado" />
         <item itemvalue="JUnit.LocacaoServiceTest.testeUsuarioVazio" />
         <item itemvalue="JUnit.All in TestesUnitarios (1)" />
-        <item itemvalue="JUnit.All in TestesUnitarios" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +167,7 @@
       <workItem from="1577384364495" duration="3883000" />
       <workItem from="1577398537156" duration="2493000" />
       <workItem from="1577538720455" duration="442000" />
-      <workItem from="1577539186417" duration="4390000" />
+      <workItem from="1577539186417" duration="7243000" />
     </task>
     <servers />
   </component>
@@ -187,26 +195,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577378554490" />
-    <state width="2518" height="207" key="GridCell.Tab.0.bottom" timestamp="1577570441028">
+    <state width="2518" height="282" key="GridCell.Tab.0.bottom" timestamp="1577578022130">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="203" key="GridCell.Tab.0.bottom/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
-    <state width="2518" height="207" key="GridCell.Tab.0.bottom/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577570441028" />
-    <state width="2518" height="207" key="GridCell.Tab.0.center" timestamp="1577570441027">
+    <state width="2518" height="282" key="GridCell.Tab.0.bottom/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577578022130" />
+    <state width="2518" height="282" key="GridCell.Tab.0.center" timestamp="1577578022128">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="203" key="GridCell.Tab.0.center/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
-    <state width="2518" height="207" key="GridCell.Tab.0.center/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577570441027" />
-    <state width="2518" height="207" key="GridCell.Tab.0.left" timestamp="1577570441026">
+    <state width="2518" height="282" key="GridCell.Tab.0.center/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577578022128" />
+    <state width="2518" height="282" key="GridCell.Tab.0.left" timestamp="1577578022127">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="203" key="GridCell.Tab.0.left/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
-    <state width="2518" height="207" key="GridCell.Tab.0.left/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577570441026" />
-    <state width="2518" height="207" key="GridCell.Tab.0.right" timestamp="1577570441028">
+    <state width="2518" height="282" key="GridCell.Tab.0.left/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577578022127" />
+    <state width="2518" height="282" key="GridCell.Tab.0.right" timestamp="1577578022129">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="203" key="GridCell.Tab.0.right/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
-    <state width="2518" height="207" key="GridCell.Tab.0.right/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577570441028" />
+    <state width="2518" height="282" key="GridCell.Tab.0.right/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577578022129" />
     <state x="2027" y="-61" key="SettingsEditor" timestamp="1577539451777">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
