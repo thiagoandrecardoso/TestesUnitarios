@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a26d7e08-b076-4140-9758-f9138b3de394" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/CalcularValorLocacaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/matchers/DiaSemanaMatchers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/matchers/MatchersProprias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestesUnitarios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TestesUnitarios.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +63,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CalcularValorLocacaoTest">
+  <component name="RunManager" selected="JUnit.LocacaoServiceTest">
     <configuration name="All in TestesUnitarios (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <option name="PACKAGE_NAME" value="" />
@@ -131,9 +136,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CalcularValorLocacaoTest" />
         <item itemvalue="JUnit.LocacaoServiceTest" />
         <item itemvalue="JUnit.LocacaoServiceTest.deveDevolverNaSegundaAoAlugarNoSabado" />
+        <item itemvalue="JUnit.CalcularValorLocacaoTest" />
         <item itemvalue="JUnit.LocacaoServiceTest.testeUsuarioVazio" />
         <item itemvalue="JUnit.All in TestesUnitarios (1)" />
       </list>
@@ -168,6 +173,7 @@
       <workItem from="1577398537156" duration="2493000" />
       <workItem from="1577538720455" duration="442000" />
       <workItem from="1577539186417" duration="7243000" />
+      <workItem from="1577584853723" duration="2477000" />
     </task>
     <servers />
   </component>
@@ -187,44 +193,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577466488105" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1577466270761">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2460" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1577585475982">
+      <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577466270761" />
+    <state x="2460" y="82" key="#com.intellij.ide.util.MemberChooser/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577585475982" />
+    <state x="2623" y="53" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1577586047756">
+      <screen x="1440" y="-157" width="2560" height="1057" />
+    </state>
+    <state x="2623" y="53" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577586047756" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1577378554490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577378554490" />
-    <state width="2518" height="282" key="GridCell.Tab.0.bottom" timestamp="1577578022130">
+    <state width="741" height="282" key="GridCell.Tab.0.bottom" timestamp="1577587301903">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="203" key="GridCell.Tab.0.bottom/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
-    <state width="2518" height="282" key="GridCell.Tab.0.bottom/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577578022130" />
-    <state width="2518" height="282" key="GridCell.Tab.0.center" timestamp="1577578022128">
+    <state width="741" height="282" key="GridCell.Tab.0.bottom/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577587301903" />
+    <state width="741" height="282" key="GridCell.Tab.0.center" timestamp="1577587301902">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="203" key="GridCell.Tab.0.center/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
-    <state width="2518" height="282" key="GridCell.Tab.0.center/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577578022128" />
-    <state width="2518" height="282" key="GridCell.Tab.0.left" timestamp="1577578022127">
+    <state width="741" height="282" key="GridCell.Tab.0.center/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577587301902" />
+    <state width="741" height="282" key="GridCell.Tab.0.left" timestamp="1577587301901">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="203" key="GridCell.Tab.0.left/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
-    <state width="2518" height="282" key="GridCell.Tab.0.left/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577578022127" />
-    <state width="2518" height="282" key="GridCell.Tab.0.right" timestamp="1577578022129">
+    <state width="741" height="282" key="GridCell.Tab.0.left/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577587301901" />
+    <state width="741" height="282" key="GridCell.Tab.0.right" timestamp="1577587301902">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state width="1877" height="203" key="GridCell.Tab.0.right/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577481206066" />
-    <state width="2518" height="282" key="GridCell.Tab.0.right/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577578022129" />
+    <state width="741" height="282" key="GridCell.Tab.0.right/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577587301902" />
     <state x="2027" y="-61" key="SettingsEditor" timestamp="1577539451777">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state x="440" y="94" key="SettingsEditor/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577387164654" />
     <state x="2027" y="-61" key="SettingsEditor/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577539451777" />
-    <state x="2315" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1577539189935">
+    <state x="2315" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1577584856790">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog/-1366.310.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1577384364730" />
-    <state x="2315" y="192" key="com.intellij.ide.util.TipDialog/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577539189935" />
+    <state x="2315" y="192" key="com.intellij.ide.util.TipDialog/0.23.1440.824/1440.-157.2560.1057@1440.-157.2560.1057" timestamp="1577584856790" />
     <state x="1885" y="295" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577398706234">
       <screen x="1440" y="-157" width="2560" height="1057" />
     </state>
