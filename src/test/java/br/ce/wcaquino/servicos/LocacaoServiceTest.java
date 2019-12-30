@@ -6,6 +6,7 @@ import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.exception.FilmeSemEstoqueException;
 import br.ce.wcaquino.exception.LocadoraException;
 import br.ce.wcaquino.matchers.DiaSemanaMatchers;
+import br.ce.wcaquino.matchers.MatchersProprias;
 import br.ce.wcaquino.utils.DataUtils;
 import org.hamcrest.DiagnosingMatcher;
 import org.junit.*;
@@ -18,8 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import static br.ce.wcaquino.matchers.MatchersProprias.caiEm;
-import static br.ce.wcaquino.matchers.MatchersProprias.caiNumaSegunda;
+import static br.ce.wcaquino.matchers.MatchersProprias.*;
 import static br.ce.wcaquino.utils.DataUtils.isMesmaData;
 import static br.ce.wcaquino.utils.DataUtils.obterDataComDiferencaDias;
 import static org.hamcrest.CoreMatchers.*;
@@ -59,8 +59,9 @@ public class LocacaoServiceTest {
         //verificacao
         error.checkThat(locacao.getValor(), is(equalTo(13.75)));
         error.checkThat(locacao.getValor(), is(not(6.0)));
-        error.checkThat(isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
-        error.checkThat(isMesmaData(locacao.getDataRetorno(), obterDataComDiferencaDias(1)), is(true));
+
+        error.checkThat(locacao.getDataLocacao(), ehHoje());
+        error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencaDias(1));
     }
 
     @Test(expected = FilmeSemEstoqueException.class)
