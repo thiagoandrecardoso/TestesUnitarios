@@ -5,26 +5,25 @@ import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.exception.FilmeSemEstoqueException;
 import br.ce.wcaquino.exception.LocadoraException;
-import br.ce.wcaquino.matchers.DiaSemanaMatchers;
-import br.ce.wcaquino.matchers.MatchersProprias;
 import br.ce.wcaquino.utils.DataUtils;
-import org.hamcrest.DiagnosingMatcher;
-import org.junit.*;
+import org.junit.Assume;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
-import sun.plugin2.main.client.CALayerProvider;
 
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static br.ce.wcaquino.builders.UsuarioBuilder.umUsuario;
 import static br.ce.wcaquino.matchers.MatchersProprias.*;
-import static br.ce.wcaquino.utils.DataUtils.isMesmaData;
-import static br.ce.wcaquino.utils.DataUtils.obterDataComDiferencaDias;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeTrue;
 
 public class LocacaoServiceTest {
 
@@ -48,7 +47,7 @@ public class LocacaoServiceTest {
     public void verificaValoresDelocacaoData_precos() throws Exception {
         //cenario
         Assume.assumeFalse(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
-        Usuario usuario = new Usuario("Usuario 1");
+        Usuario usuario = umUsuario().agora();
         Filme filme1 = new Filme("Filme 1", 2, 5.0);
         Filme filme2 = new Filme("Filme 2", 2, 5.0);
         Filme filme3 = new Filme("Filme 3", 2, 5.0);
@@ -67,7 +66,7 @@ public class LocacaoServiceTest {
     @Test(expected = FilmeSemEstoqueException.class)
     public void deveLancarExcecaoAoLocarFilmeSemEstoque() throws Exception {
         //cenario
-        Usuario usuario = new Usuario("Usuario 1");
+        Usuario usuario = umUsuario().agora();
         Filme filme1 = new Filme("Filme 1", 1, 5.0);
         Filme filme2 = new Filme("Filme 2", 0, 5.0);
         Filme filme3 = new Filme("Filme 3", 4, 5.0);
@@ -92,7 +91,7 @@ public class LocacaoServiceTest {
 
     @Test
     public void naoDeveAlugarFilmeSemFilme() throws FilmeSemEstoqueException, LocadoraException {
-        Usuario usuario = new Usuario("Usuario 1");
+        Usuario usuario = umUsuario().agora();
 
         exception.expect(LocadoraException.class);
         exception.expectMessage("Filme vazio");
@@ -102,9 +101,9 @@ public class LocacaoServiceTest {
     @Test
     public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException {
 
-        Assume.assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
+        assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
 
-        Usuario usuario = new Usuario("Thiago");
+        Usuario usuario = umUsuario().agora();
         List<Filme> filmes = Arrays.asList(new Filme("Armageddon", 2, 4.0));
 
         Locacao retorno = service.alugarFilme(usuario, filmes);

@@ -1,0 +1,10 @@
+
+.idea/workspace.xml
+
+target/test-classes/br/ce/wcaquino/builders/UsuarioBuilder.class
+
+target/test-classes/br/ce/wcaquino/servicos/CalcularValorLocacaoTest.class
+
+target/test-classes/br/ce/wcaquino/suites/SuiteExecucao.class
+
+target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class
