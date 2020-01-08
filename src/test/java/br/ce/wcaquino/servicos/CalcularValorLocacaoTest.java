@@ -12,6 +12,7 @@ import java.util.List;
 import br.ce.wcaquino.builders.FilmeBuilder;
 import br.ce.wcaquino.exception.FilmeSemEstoqueException;
 import br.ce.wcaquino.exception.LocadoraException;
+import buildermaster.BuilderMaster;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -73,6 +74,10 @@ public class CalcularValorLocacaoTest {
         //verificacao
         assertThat(resultado.getValor(), is(valorLocacao));
     }
+
+//    public static void main(String[] args) {
+//       new BuilderMaster().gerarCodigoClasse(Locacao.class);
+//    }
 
 //    @Test
 //    public void print(){

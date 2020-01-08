@@ -10,3 +10,13 @@ target/test-classes/br/ce/wcaquino/suites/SuiteExecucao.class
 target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class
 
 target/test-classes/br/ce/wcaquino/builders/FilmeBuilder.class
+
+target/test-classes/META-INF/TestesUnitarios.kotlin_module
+
+target/test-classes/br/ce/wcaquino/matchers/DiaSemanaMatchers.class
+
+target/test-classes/br/ce/wcaquino/builders/LocacaoBuilder.class
+
+target/classes/br/ce/wcaquino/servicos/LocacaoService.class
+
+target/classes/br/ce/wcaquino/daos/LocacaoDAO.class
