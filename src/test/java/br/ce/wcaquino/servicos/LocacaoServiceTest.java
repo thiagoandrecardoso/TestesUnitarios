@@ -1,5 +1,8 @@
 package br.ce.wcaquino.servicos;
 
+import br.ce.wcaquino.builders.FilmeBuilder;
+import br.ce.wcaquino.builders.UsuarioBuilder;
+import br.ce.wcaquino.daos.LocacaoDAO;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
@@ -9,6 +12,7 @@ import br.ce.wcaquino.utils.DataUtils;
 import org.junit.*;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.mockito.Mockito;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -22,6 +26,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
+import static org.mockito.Mockito.when;
 
 public class LocacaoServiceTest {
 
@@ -30,6 +35,8 @@ public class LocacaoServiceTest {
     @Rule
     public ExpectedException exception = ExpectedException.none();
     private LocacaoService service;
+    private SPCService spcService;
+    private LocacaoDAO dao;
 
     /**
      * Before roda antes de cada teste
@@ -39,6 +46,10 @@ public class LocacaoServiceTest {
     @Before
     public void setUp() {
         service = new LocacaoService();
+        dao = Mockito.mock(LocacaoDAO.class);
+        spcService = Mockito.mock(SPCService.class);
+        service.setLocacaoDAO(dao);
+        service.setSpcService(spcService);
     }
 
     @Test
@@ -96,7 +107,7 @@ public class LocacaoServiceTest {
         service.alugarFilme(usuario, null);
     }
 
-//    @Ignore
+    //    @Ignore
     @Test
     public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException {
 
@@ -111,5 +122,19 @@ public class LocacaoServiceTest {
 //        assertThat(retorno.getDataRetorno(), caiEm(Calendar.MONDAY));
 
         assertThat(retorno.getDataRetorno(), caiNumaSegunda());
+    }
+
+    @Test
+    public void naoDeveAlugarFilmeParaNegativado() throws FilmeSemEstoqueException, LocadoraException {
+        Usuario usuario = UsuarioBuilder.umUsuario().agora();
+
+        List<Filme> filmes = Arrays.asList(FilmeBuilder.umFilme().agora());
+
+        when(spcService.possuiNegativacao(usuario)).thenReturn(true);
+
+        exception.expect(LocadoraException.class);
+        exception.expectMessage("Usuário Negativado");
+
+        service.alugarFilme(usuario, filmes);
     }
 }
