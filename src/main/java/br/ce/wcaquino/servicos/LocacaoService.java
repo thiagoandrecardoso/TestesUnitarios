@@ -2,16 +2,21 @@ package br.ce.wcaquino.servicos;
 
 import static br.ce.wcaquino.utils.DataUtils.adicionarDias;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import br.ce.wcaquino.daos.LocacaoDAO;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.exception.FilmeSemEstoqueException;
 import br.ce.wcaquino.exception.LocadoraException;
+import br.ce.wcaquino.utils.DataUtils;
 
 public class LocacaoService {
+
+    private LocacaoDAO dao;
 
     public Locacao alugarFilme(Usuario usuario, List<Filme> listaFilme) throws FilmeSemEstoqueException, LocadoraException {
         if (usuario == null) {
@@ -22,7 +27,7 @@ public class LocacaoService {
         }
         for (Filme lista : listaFilme) {
             if (lista.getEstoque() == 0) {
-                throw new FilmeSemEstoqueException();
+                throw new FilmeSemEstoqueException(lista.getNome());
             }
         }
 
@@ -33,18 +38,39 @@ public class LocacaoService {
 
         // adicionar preço da locação
         double valorLocacaoAux = 0;
-        for (Filme lista : listaFilme) {
-            valorLocacaoAux += lista.getPrecoLocacao();
+
+        for (int i = 0; i < listaFilme.size(); i++) {
+            Filme filme = listaFilme.get(i);
+            Double valorFilme = filme.getPrecoLocacao();
+            switch (i) {
+                case 2:
+                    valorFilme *= 0.75;
+                    break;
+                case 3:
+                    valorFilme *= 0.5;
+                    break;
+                case 4:
+                    valorFilme *= 0.25;
+                    break;
+                case 5:
+                    valorFilme *= 0.0;
+                    break;
+            }
+            valorLocacaoAux += valorFilme;
         }
         locacao.setValor(valorLocacaoAux);
 
         //Entrega no dia seguinte
         Date dataEntrega = new Date();
-        dataEntrega = adicionarDias(dataEntrega, 1);
-        locacao.setDataRetorno(dataEntrega);
 
+        if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SATURDAY)){
+            dataEntrega = adicionarDias(dataEntrega, 2);
+        }else{
+            dataEntrega = adicionarDias(dataEntrega, 1);
+        }
+        locacao.setDataRetorno(dataEntrega);
         //Salvando a locacao...
-        //TODO adicionar método para salvar
+        dao.salvar(locacao);
 
         return locacao;
     }
