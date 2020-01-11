@@ -18,6 +18,7 @@ public class LocacaoService {
 
     private LocacaoDAO dao;
     private SPCService spcService;
+    private EmailServices emailServices;
 
     public Locacao alugarFilme(Usuario usuario, List<Filme> listaFilme) throws FilmeSemEstoqueException, LocadoraException {
         if (usuario == null) {
@@ -78,6 +79,17 @@ public class LocacaoService {
         dao.salvar(locacao);
 
         return locacao;
+    }
+
+    public void notificarAtrasos(){
+        List<Locacao> locacoes = dao.obterLocacoesPendentes();
+        for (Locacao locacao : locacoes){
+            emailServices.notificarAtraso(locacao.getUsuario());
+        }
+    }
+
+    public void setEmailServices(EmailServices emailServices) {
+        this.emailServices = emailServices;
     }
 
     public void setLocacaoDAO(LocacaoDAO dao){
