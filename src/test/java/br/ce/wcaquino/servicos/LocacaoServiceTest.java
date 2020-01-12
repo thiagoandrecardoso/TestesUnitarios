@@ -29,8 +29,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class LocacaoServiceTest {
 
@@ -149,11 +148,13 @@ public class LocacaoServiceTest {
     public void deveEnviarEmailParaLocacoesAtrasadas(){
         //cenario
         Usuario usuario = umUsuario().agora();
+        Usuario usuario2 = umUsuario().comNome("Usuário em dias").agora();
+        Usuario usuario3 = umUsuario().comNome("Outro atrasado").agora();
         List<Locacao> locacoes = Arrays.asList(
-                umLocacao()
-                        .comUsuario(usuario)
-                        .comDataRetorno(obterDataComDiferencaDias(-2))
-                        .agora());
+                umLocacao().atrasado().comUsuario(usuario).agora(),
+                umLocacao().comUsuario(usuario2).agora(),
+                umLocacao().atrasado().comUsuario(usuario3).agora(),
+                umLocacao().atrasado().comUsuario(usuario3).agora());
         when(dao.obterLocacoesPendentes()).thenReturn(locacoes);
 
         //acao
@@ -161,5 +162,13 @@ public class LocacaoServiceTest {
 
         //verificacao
         verify(emailServices).notificarAtraso(usuario);
+        verify(emailServices, never()).notificarAtraso(usuario2);
+        verify(emailServices, atLeastOnce()).notificarAtraso(usuario3);
+
+        // verifica se qualquer instancia de usuario enviou recebeu e-mail pelo menos duas vezes
+        verify(emailServices, times(3)).notificarAtraso(Mockito.any(Usuario.class));
+
+        // verificar se nem um outro e-mail foi lancado
+        Mockito.verifyNoMoreInteractions(emailServices);
     }
 }
