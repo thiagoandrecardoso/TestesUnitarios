@@ -13,7 +13,10 @@ import br.ce.wcaquino.utils.DataUtils;
 import org.junit.*;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -37,9 +40,14 @@ public class LocacaoServiceTest {
     public ErrorCollector error = new ErrorCollector();
     @Rule
     public ExpectedException exception = ExpectedException.none();
+
+    @InjectMocks
     private LocacaoService service;
+    @Mock
     private SPCService spcService;
+    @Mock
     private LocacaoDAO dao;
+    @Mock
     private EmailServices emailServices;
 
     /**
@@ -49,13 +57,7 @@ public class LocacaoServiceTest {
      */
     @Before
     public void setUp() {
-        service = new LocacaoService();
-        dao = Mockito.mock(LocacaoDAO.class);
-        spcService = Mockito.mock(SPCService.class);
-        service.setLocacaoDAO(dao);
-        service.setSpcService(spcService);
-        emailServices = Mockito.mock(EmailServices.class);
-        service.setEmailServices(emailServices);
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
