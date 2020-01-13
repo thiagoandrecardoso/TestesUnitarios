@@ -1,5 +1,7 @@
 package br.ce.wcaquino.servicos;
 
+import br.ce.wcaquino.builders.LocacaoBuilder;
+import br.ce.wcaquino.daos.LocacaoDAO;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
@@ -9,19 +11,19 @@ import br.ce.wcaquino.utils.DataUtils;
 import org.junit.*;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.mockito.*;
 
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static br.ce.wcaquino.builders.FilmeBuilder.umFilme;
+import static br.ce.wcaquino.builders.LocacaoBuilder.umLocacao;
 import static br.ce.wcaquino.builders.UsuarioBuilder.umUsuario;
 import static br.ce.wcaquino.matchers.MatchersProprias.*;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
+import static org.mockito.Mockito.*;
 
 public class LocacaoServiceTest {
 
@@ -29,16 +31,19 @@ public class LocacaoServiceTest {
     public ErrorCollector error = new ErrorCollector();
     @Rule
     public ExpectedException exception = ExpectedException.none();
-    private LocacaoService service;
 
-    /**
-     * Before roda antes de cada teste
-     * O método sempre inicializa o que for repassado no ponto de início
-     * assim, a variável contador sempre ficará com o valor 1
-     */
+    @InjectMocks
+    private LocacaoService service;
+    @Mock
+    private SPCService spcService;
+    @Mock
+    private LocacaoDAO dao;
+    @Mock
+    private EmailServices emailServices;
+
     @Before
     public void setUp() {
-        service = new LocacaoService();
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
@@ -51,7 +56,7 @@ public class LocacaoServiceTest {
         Filme filme3 = umFilme().comValor(5.0).agora();
         List<Filme> listaFilmes = Arrays.asList(filme1, filme2, filme3);
         //acao
-        Locacao locacao = null;
+        Locacao locacao;
         locacao = service.alugarFilme(usuario, listaFilmes);
         //verificacao
         error.checkThat(locacao.getValor(), is(equalTo(13.75)));
@@ -96,14 +101,14 @@ public class LocacaoServiceTest {
         service.alugarFilme(usuario, null);
     }
 
-//    @Ignore
+    //    @Ignore
     @Test
     public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException {
 
         assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
 
         Usuario usuario = umUsuario().agora();
-        List<Filme> filmes = Arrays.asList(umFilme().agora());
+        List<Filme> filmes = Collections.singletonList(umFilme().agora());
 
         Locacao retorno = service.alugarFilme(usuario, filmes);
 
@@ -112,4 +117,78 @@ public class LocacaoServiceTest {
 
         assertThat(retorno.getDataRetorno(), caiNumaSegunda());
     }
+
+    @Test
+    public void naoDeveAlugarFilmeParaNegativado() throws Exception {
+        Usuario usuario = umUsuario().agora();
+
+        List<Filme> filmes = Collections.singletonList(umFilme().agora());
+
+        when(spcService.possuiNegativacao(usuario)).thenReturn(true);
+
+        exception.expect(LocadoraException.class);
+        exception.expectMessage("Usuário Negativado");
+
+        service.alugarFilme(usuario, filmes);
+    }
+
+    @Test
+    public void deveEnviarEmailParaLocacoesAtrasadas(){
+        //cenario
+        Usuario usuario = umUsuario().agora();
+        Usuario usuario2 = umUsuario().comNome("Usuário em dias").agora();
+        Usuario usuario3 = umUsuario().comNome("Outro atrasado").agora();
+        List<Locacao> locacoes = Arrays.asList(
+                umLocacao().atrasado().comUsuario(usuario).agora(),
+                umLocacao().comUsuario(usuario2).agora(),
+                umLocacao().atrasado().comUsuario(usuario3).agora(),
+                umLocacao().atrasado().comUsuario(usuario3).agora());
+        when(dao.obterLocacoesPendentes()).thenReturn(locacoes);
+
+        //acao
+        service.notificarAtrasos();
+
+        //verificacao
+        verify(emailServices).notificarAtraso(usuario);
+        verify(emailServices, never()).notificarAtraso(usuario2);
+        verify(emailServices, atLeastOnce()).notificarAtraso(usuario3);
+
+        // verifica se qualquer instancia de usuario enviou recebeu e-mail pelo menos duas vezes
+        verify(emailServices, times(3)).notificarAtraso(Mockito.any(Usuario.class));
+
+        // verificar se nem um outro e-mail foi lancado
+        Mockito.verifyNoMoreInteractions(emailServices);
+    }
+
+    @Test
+    public void deveTratarErrosSPC() throws Exception {
+        Usuario usuario = umUsuario().agora();
+        List<Filme> filmes = Collections.singletonList(umFilme().agora());
+
+        when(spcService.possuiNegativacao(usuario)).thenThrow(new Exception("Falha SPC"));
+
+        exception.expect(LocadoraException.class);
+        exception.expectMessage("Problemas com SPC, tente novamente");
+
+        service.alugarFilme(usuario, filmes);
+    }
+
+    @Test
+    public void deveProrrogarLocacao(){
+        Locacao locacao = LocacaoBuilder.umLocacao().agora();
+
+        service.prorrogarLocacao(locacao, 3);
+
+        /**
+         * Captura o argumento que eh repassado no metodo
+         */
+        ArgumentCaptor<Locacao> argumentCaptor = ArgumentCaptor.forClass(Locacao.class);
+        Mockito.verify(dao).salvar(argumentCaptor.capture());
+        Locacao locacaoRetornada = argumentCaptor.getValue();
+
+        error.checkThat(locacaoRetornada.getValor(), is(12.00));
+        error.checkThat(locacaoRetornada.getDataLocacao(), ehHoje());
+        error.checkThat(locacaoRetornada.getDataRetorno(), ehHojeComDiferencaDias(3));
+    }
+
 }

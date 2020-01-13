@@ -13,10 +13,13 @@ import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.exception.FilmeSemEstoqueException;
 import br.ce.wcaquino.exception.LocadoraException;
 import br.ce.wcaquino.utils.DataUtils;
+import org.jetbrains.annotations.NotNull;
 
 public class LocacaoService {
 
     private LocacaoDAO dao;
+    private SPCService spcService;
+    private EmailServices emailServices;
 
     public Locacao alugarFilme(Usuario usuario, List<Filme> listaFilme) throws FilmeSemEstoqueException, LocadoraException {
         if (usuario == null) {
@@ -29,6 +32,16 @@ public class LocacaoService {
             if (lista.getEstoque() == 0) {
                 throw new FilmeSemEstoqueException(lista.getNome());
             }
+        }
+
+        boolean ehNegativado;
+        try {
+            ehNegativado = spcService.possuiNegativacao(usuario);
+        } catch (Exception e) {
+            throw new LocadoraException("Problemas com SPC, tente novamente");
+        }
+        if (ehNegativado) {
+            throw new LocadoraException("Usuário Negativado");
         }
 
         Locacao locacao = new Locacao();
@@ -63,9 +76,9 @@ public class LocacaoService {
         //Entrega no dia seguinte
         Date dataEntrega = new Date();
 
-        if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SATURDAY)){
+        if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SATURDAY)) {
             dataEntrega = adicionarDias(dataEntrega, 2);
-        }else{
+        } else {
             dataEntrega = adicionarDias(dataEntrega, 1);
         }
         locacao.setDataRetorno(dataEntrega);
@@ -74,4 +87,24 @@ public class LocacaoService {
 
         return locacao;
     }
+
+    public void notificarAtrasos() {
+        List<Locacao> locacoes = dao.obterLocacoesPendentes();
+        for (Locacao locacao : locacoes) {
+            if (locacao.getDataRetorno().before(new Date())) {
+                emailServices.notificarAtraso(locacao.getUsuario());
+            }
+        }
+    }
+
+    public void prorrogarLocacao(@NotNull Locacao locacao, int dias) {
+        Locacao novaLocacao = new Locacao();
+        novaLocacao.setUsuario(locacao.getUsuario());
+        novaLocacao.setListaFilme(locacao.getListaFilme());
+        novaLocacao.setDataLocacao(new Date());
+        novaLocacao.setDataRetorno(DataUtils.obterDataComDiferencaDias(dias));
+        novaLocacao.setValor(locacao.getValor() * dias);
+        dao.salvar(novaLocacao);
+    }
+
 }
