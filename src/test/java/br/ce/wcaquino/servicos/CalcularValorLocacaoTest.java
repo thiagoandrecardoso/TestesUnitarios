@@ -1,35 +1,32 @@
 package br.ce.wcaquino.servicos;
 
-import static br.ce.wcaquino.builders.FilmeBuilder.*;
-import static br.ce.wcaquino.builders.UsuarioBuilder.umUsuario;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
-import br.ce.wcaquino.builders.FilmeBuilder;
 import br.ce.wcaquino.daos.LocacaoDAO;
+import br.ce.wcaquino.entidades.Filme;
+import br.ce.wcaquino.entidades.Locacao;
+import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.exception.FilmeSemEstoqueException;
 import br.ce.wcaquino.exception.LocadoraException;
-import buildermaster.BuilderMaster;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import br.ce.wcaquino.entidades.Filme;
-import br.ce.wcaquino.entidades.Locacao;
-import br.ce.wcaquino.entidades.Usuario;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
-@RunWith(Parameterized.class)
+import static br.ce.wcaquino.builders.FilmeBuilder.umFilme;
+import static br.ce.wcaquino.builders.UsuarioBuilder.umUsuario;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+
+@RunWith(value = Parameterized.class)
 public class CalcularValorLocacaoTest {
 
     @InjectMocks
@@ -47,6 +44,9 @@ public class CalcularValorLocacaoTest {
 
     @Parameter(value = 2)
     public String cenario;
+
+    public CalcularValorLocacaoTest() {
+    }
 
     @Before
     public void setUp() {
