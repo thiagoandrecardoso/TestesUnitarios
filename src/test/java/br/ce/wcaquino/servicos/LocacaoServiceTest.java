@@ -11,7 +11,11 @@ import br.ce.wcaquino.utils.DataUtils;
 import org.junit.*;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
 import org.mockito.*;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.util.*;
 
@@ -25,6 +29,8 @@ import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
 import static org.mockito.Mockito.*;
 
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({LocacaoService.class, DataUtils.class})
 public class LocacaoServiceTest {
 
     @Rule
@@ -49,7 +55,9 @@ public class LocacaoServiceTest {
     @Test
     public void verificaValoresDelocacaoData_precos() throws Exception {
         //cenario
-        Assume.assumeFalse(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
+//        Assume.assumeFalse(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
+        PowerMockito.whenNew(Date.class).withNoArguments().thenReturn(DataUtils.obterData(28, 4, 2017));
+
         Usuario usuario = umUsuario().agora();
         Filme filme1 = umFilme().comValor(5.0).agora();
         Filme filme2 = umFilme().comValor(5.0).agora();
@@ -64,6 +72,9 @@ public class LocacaoServiceTest {
 
         error.checkThat(locacao.getDataLocacao(), ehHoje());
         error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencaDias(1));
+        error.checkThat(DataUtils.isMesmaData(locacao.getDataLocacao(), DataUtils.obterData(28, 4, 2017)), is(true));
+        error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterData(29, 4, 2017)), is(true));
+
     }
 
     @Test(expected = FilmeSemEstoqueException.class)
@@ -103,12 +114,13 @@ public class LocacaoServiceTest {
 
     //    @Ignore
     @Test
-    public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException {
+    public void deveDevolverNaSegundaAoAlugarNoSabado() throws Exception {
 
-        assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
-
+//        assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
         Usuario usuario = umUsuario().agora();
         List<Filme> filmes = Collections.singletonList(umFilme().agora());
+
+        PowerMockito.whenNew(Date.class).withNoArguments().thenReturn(DataUtils.obterData(29, 4, 2017));
 
         Locacao retorno = service.alugarFilme(usuario, filmes);
 
@@ -116,6 +128,7 @@ public class LocacaoServiceTest {
 //        assertThat(retorno.getDataRetorno(), caiEm(Calendar.MONDAY));
 
         assertThat(retorno.getDataRetorno(), caiNumaSegunda());
+        PowerMockito.verifyNew(Date.class, Mockito.times(2)).withNoArguments();
     }
 
     @Test
