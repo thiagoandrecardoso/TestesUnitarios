@@ -47,7 +47,7 @@ public class LocacaoService {
         Locacao locacao = new Locacao();
         locacao.setListaFilme(listaFilme);
         locacao.setUsuario(usuario);
-        locacao.setDataLocacao(new Date());
+        locacao.setDataLocacao(Calendar.getInstance().getTime());
 
         // adicionar preço da locação
         double valorLocacaoAux = 0;
@@ -74,7 +74,7 @@ public class LocacaoService {
         locacao.setValor(valorLocacaoAux);
 
         //Entrega no dia seguinte
-        Date dataEntrega = new Date();
+        Date dataEntrega = Calendar.getInstance().getTime();
 
         if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SATURDAY)) {
             dataEntrega = adicionarDias(dataEntrega, 2);
