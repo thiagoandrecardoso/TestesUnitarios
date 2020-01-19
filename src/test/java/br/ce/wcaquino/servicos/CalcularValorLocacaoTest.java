@@ -61,9 +61,9 @@ public class CalcularValorLocacaoTest {
     private static Filme filme6 = umFilme().agora();
     private static Filme filme7 = umFilme().agora();
 
-    @Parameters(name="{2}")
-    public static Collection<Object[]> getParametros(){
-        return Arrays.asList(new Object[][] {
+    @Parameters(name = "{2}")
+    public static Collection<Object[]> getParametros() {
+        return Arrays.asList(new Object[][]{
                 {Arrays.asList(filme1, filme2), 8.0, "2 Filmes: Sem Desconto"},
                 {Arrays.asList(filme1, filme2, filme3), 11.0, "3 Filmes: 25%"},
                 {Arrays.asList(filme1, filme2, filme3, filme4), 13.0, "4 Filmes: 50%"},
@@ -74,7 +74,7 @@ public class CalcularValorLocacaoTest {
     }
 
     @Test
-    public void deveCalcularValorLocacaoConsiderandoDescontos() throws FilmeSemEstoqueException, LocadoraException{
+    public void deveCalcularValorLocacaoConsiderandoDescontos() throws FilmeSemEstoqueException, LocadoraException {
         //cenario
         Usuario usuario = umUsuario().agora();
 
