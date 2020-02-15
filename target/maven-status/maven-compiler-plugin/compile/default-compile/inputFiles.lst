@@ -1,10 +1,11 @@
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\entidades\Locacao.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\servicos\SPCService.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\daos\LocacaoDAO.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\entidades\Usuario.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\servicos\LocacaoService.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\entidades\Filme.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\servicos\EmailServices.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\utils\DataUtils.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\exception\LocadoraException.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\main\java\br\ce\wcaquino\exception\FilmeSemEstoqueException.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/utils/DataUtils.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/servicos/SPCService.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/daos/LocacaoDAO.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/servicos/EmailServices.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/exception/LocadoraException.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/exception/FilmeSemEstoqueException.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/entidades/Locacao.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/entidades/Filme.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/servicos/Calculadora.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/main/java/br/ce/wcaquino/entidades/Usuario.java

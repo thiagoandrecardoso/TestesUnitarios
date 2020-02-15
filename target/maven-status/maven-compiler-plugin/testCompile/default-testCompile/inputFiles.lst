@@ -1,10 +1,11 @@
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\AssertTest.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\builders\UsuarioBuilder.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\matchers\DataDiferencaDiasMatchers.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\servicos\CalcularValorLocacaoTest.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\matchers\MatchersProprias.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\suites\SuiteExecucao.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\builders\LocacaoBuilder.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\servicos\LocacaoServiceTest.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\matchers\DiaSemanaMatchers.java
-C:\Users\thiago.silva\Documents\9 - testes unitários\TestesUnitarios\src\test\java\br\ce\wcaquino\builders\FilmeBuilder.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/builders/FilmeBuilder.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/builders/LocacaoBuilder.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/servicos/CalculadoraTest.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/suites/SuiteExecucao.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/matchers/DataDiferencaDiasMatchers.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/runners/ParallelRunner.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/servicos/CalcularValorLocacaoTest.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/matchers/MatchersProprias.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/builders/UsuarioBuilder.java
+/Users/thiagoandreqi/Documents/07 - git/junit/TestesUnitarios/src/test/java/br/ce/wcaquino/matchers/DiaSemanaMatchers.java
