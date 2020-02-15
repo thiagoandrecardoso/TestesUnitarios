@@ -17,12 +17,12 @@ public class FilmeBuilder {
         return builder;
     }
 
-    public FilmeBuilder semEstoque(){
+    public FilmeBuilder semEstoque() {
         filme.setEstoque(0);
         return this;
     }
 
-    public FilmeBuilder comValor(double valor){
+    public FilmeBuilder comValor(double valor) {
         filme.setPrecoLocacao(valor);
         return this;
     }

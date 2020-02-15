@@ -25,7 +25,6 @@ public class DataDiferencaDiasMatchers extends TypeSafeMatcher<Date> {
 
     @Override
     protected boolean matchesSafely(Date data) {
-        System.out.println("DATA " + data.toString());
         return DataUtils.isMesmaData(data, DataUtils.obterDataComDiferencaDias(qtdDias));
     }
 }

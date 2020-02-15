@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="11" failures="0" name="br.ce.wcaquino.servicos.LocacaoServiceTest" time="0.399" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="br.ce.wcaquino.servicos.CalculadoraTest" time="0.017" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib"/>
@@ -65,15 +65,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveLancarExcecaoAoLocarFilmeSemEstoque" time="0.283"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveProrrogarLocacao" time="0.024"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="naoDeveAlugarFilmeParaNegativado" time="0.014"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveEnviarEmailParaLocacoesAtrasadas" time="0.014"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveAlugarFilmeSemCalcularValor" time="0.019"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveCalcularValorLocacao" time="0.004"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="verificaValoresDelocacaoData_precos" time="0.025"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="naoDeveAlugarFilmeSemUsuario" time="0.003"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveTratarErrosSPC" time="0.004"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="naoDeveAlugarFilmeSemFilme" time="0.003"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveDevolverNaSegundaAoAlugarNoSabado" time="0.006"/>
+  <testcase classname="br.ce.wcaquino.servicos.CalculadoraTest" name="deveSomarDoisNumeros3" time="0.005"/>
+  <testcase classname="br.ce.wcaquino.servicos.CalculadoraTest" name="deveSomarDoisNumeros1" time="0.006"/>
+  <testcase classname="br.ce.wcaquino.servicos.CalculadoraTest" name="deveSomarDoisNumeros2" time="0.006"/>
+  <testcase classname="br.ce.wcaquino.servicos.CalculadoraTest" name="deveSomarDoisNumeros" time="0"/>
 </testsuite>
