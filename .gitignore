@@ -22,3 +22,27 @@ target/classes/br/ce/wcaquino/servicos/LocacaoService.class
 target/classes/br/ce/wcaquino/daos/LocacaoDAO.class
 
 target/classes/br/ce/wcaquino/servicos/SPCService.class
+
+target/maven-archiver/pom.properties
+
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+
+target/surefire-reports/br.ce.wcaquino.servicos.CalculadoraTest.txt
+
+target/surefire-reports/br.ce.wcaquino.servicos.CalcularValorLocacaoTest.txt
+
+target/surefire-reports/br.ce.wcaquino.servicos.LocacaoServiceTest.txt
+
+target/surefire-reports/TEST-br.ce.wcaquino.servicos.CalculadoraTest.xml
+
+target/surefire-reports/TEST-br.ce.wcaquino.servicos.CalcularValorLocacaoTest.xml
+
+target/surefire-reports/TEST-br.ce.wcaquino.servicos.LocacaoServiceTest.xml
+
+target/test-classes/br/ce/wcaquino/servicos/CalculadoraTest.class
+
+target/TestesUnitarios-0.0.1-SNAPSHOT.jar
+
+TestesUnitarios.iml
